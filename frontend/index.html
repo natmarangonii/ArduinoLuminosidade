@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Estufa Monitor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Estufa Monitor</h1>
+        <p>Monitoramento ambiental de cogumelos</p>
+    </header>
+
+    <main>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Temperatura</h3>
+                <h2 id="temperatura">-- °C</h2>
+            </div>
+
+            <div class="card">
+                <h3>Umidade</h3>
+                <h2 id="umidade">-- %</h2>
+            </div>
+
+            <div class="card">
+                <h3>Luminosidade</h3>
+                <h2 id="luminosidade">--</h2>
+            </div>
+
+        </section>
+
+        <p id="status">Carregando dados...</p>
+
+        <section class="graficos">
+
+            <div class="grafico">
+                <h3>Temperatura</h3>
+                <canvas id="graficoTemperatura"></canvas>
+            </div>
+
+            <div class="grafico">
+                <h3>Umidade</h3>
+                <canvas id="graficoUmidade"></canvas>
+            </div>
+
+            <div class="grafico">
+                <h3>Luminosidade</h3>
+                <canvas id="graficoLuminosidade"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

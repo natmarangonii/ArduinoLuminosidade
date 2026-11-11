@@ -1,0 +1,190 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --vinho: #751e2b;
+    --vermelho: #a63b4b;
+    --vermelho-claro: #f8e9eb;
+    --fundo: #fff8f8;
+    --branco: #ffffff;
+    --texto: #44232b;
+    --borda: #efd8dc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #751e2b, #a63b4b);
+    color: white;
+    text-align: center;
+    padding: 55px 20px 65px;
+    border-radius: 0 0 28px 28px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 15px;
+    color: #fbe5e8;
+    line-height: 1.6;
+}
+
+/* CONTEUDO */
+
+main {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 25px 50px;
+}
+
+/* CARDS DE MEDICOES */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 22px rgba(117, 30, 43, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--vermelho);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(117, 30, 43, 0.12);
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #95636d;
+    margin-bottom: 18px;
+    letter-spacing: 0.4px;
+}
+
+.card h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--vinho);
+}
+
+/* STATUS DA API */
+
+#status {
+    text-align: center;
+    margin: 32px 0;
+    padding: 13px 20px;
+    background: var(--vermelho-claro);
+    color: var(--vinho);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* GRAFICOS */
+
+.graficos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.grafico {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 5px 22px rgba(117, 30, 43, 0.05);
+    transition: box-shadow 0.3s ease;
+    min-width: 0;
+}
+
+.grafico:hover {
+    box-shadow: 0 10px 30px rgba(117, 30, 43, 0.1);
+}
+
+.grafico h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vinho);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.grafico canvas {
+    width: 100% !important;
+    max-width: 100%;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    header {
+        padding: 40px 20px 45px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px 35px;
+    }
+
+    .card {
+        padding: 28px 20px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .grafico {
+        padding: 20px 15px;
+    }
+}
